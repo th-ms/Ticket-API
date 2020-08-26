@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
-const Cookie = require('../models/Cookie');
-const Client = require('../models/Client');
+const Cookie = require('../models/Cookie.js');
+const Client = require('../models/Client.js');
 const genCookie = require('../public/customTicket.js')
 const crypto = require("crypto");
 
