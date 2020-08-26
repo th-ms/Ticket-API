@@ -10,7 +10,6 @@ var port = process.env.PORT || 8080
 const apiRoute = require('./routes/api');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-import cors from 'cors';
 var User = require('./models/User.js');
 
 mongoose.connect('mongodb+srv://thomas:lTtlhuzgeUWH76hx@cluster0.j03wb.mongodb.net/rest?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true}, () =>
@@ -34,7 +33,7 @@ console.log('Connected to DB'))
 //         console.log("Error fetching ticket.js")
 //         console.log(error)
 //     })
-
+app.use(allowCrossDomain)
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,7 +47,6 @@ app.use(session({
         expires: 600000
     }
 }));
-app.use(cors());
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
