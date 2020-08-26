@@ -2,7 +2,7 @@ import { CountUp } from './countUp.min.js';
 
 function getCookieCount(){
     var Http = new XMLHttpRequest();
-    var url='https://th-mas-ticketapi.herokuapp.com/api/count';
+    var url='https://t-ticket-api.herokuapp.com/api/count';
     Http.open("GET", url);
     Http.send();
 
@@ -16,7 +16,7 @@ function getCookieCount(){
 
 function loadClients(){
     var Http = new XMLHttpRequest();
-    var url='https://th-mas-ticketapi.herokuapp.com/api/clients';
+    var url='https://t-ticket-api.herokuapp.com/api/clients';
     Http.open("GET", url);
     Http.send();
     
