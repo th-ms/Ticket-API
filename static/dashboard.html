@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - TicketAPI</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <script type="text/javascript">
+        getter = setInterval(()=>{
+            if (document.cookie != "") {
+                clearInterval(getter);
+            }
+        }, 10);
+    </script>
+    <script src="ticket.js"></script>
+    <script src="assets/js/dashboard.js" type="module"></script>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper" style="padding-top: 20px;">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Dashboard</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Cookie count</span></div>
+                                            <script>
+                                                
+                                            </script>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="totalCookies" class="Count">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-cookie-bite fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>client count</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="material-icons fa-2x text-gray-300" style="font-size: 32px;">person</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-info py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>cookies added in prev. 24 hrs</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>0</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-plus-circle fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span><strong>COOKIES served IN PREV. 24 HRS</strong></span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-minus-circle fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary font-weight-bold m-0">Cookies Overview</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area"><canvas data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Earnings&quot;,&quot;fill&quot;:true,&quot;data&quot;:[&quot;0&quot;,&quot;10000&quot;,&quot;5000&quot;,&quot;15000&quot;,&quot;10000&quot;,&quot;20000&quot;,&quot;15000&quot;,&quot;25000&quot;],&quot;backgroundColor&quot;:&quot;rgba(78, 115, 223, 0.05)&quot;,&quot;borderColor&quot;:&quot;rgba(78, 115, 223, 1)&quot;}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;]},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}]}}}"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-xl-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary font-weight-bold m-0">Client Usage</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area"><canvas data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas></div>
+                                    <div
+                                        class="text-center small mt-4"><span class="mr-2"><i class="fas fa-circle text-primary"></i>&nbsp;th-mas#0001</span><span class="mr-2"><i class="fas fa-circle text-success"></i>&nbsp;Conner#4321</span><span class="mr-2"><i class="fas fa-circle text-info"></i>&nbsp;gtgpreme#6969</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 0px;padding-bottom: 20px;">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 font-weight-bold">Client Info</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                    <table class="table my-0" id="clientTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Discord</th>
+                                                <th>API Key</th>
+                                                <th>Email</th>
+                                                <th>Requests</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <form>
+                                                <td><input type="text" id="newDiscord" placeholder="Discord"></td>
+                                                <td><input type="text" id="newEmail" placeholder="Email"></td>
+                                                <td></td>
+                                                <td><button class="btn btn-primary" type="button" onclick="addClient()" style="height: 30px;padding-top: 3px;padding-bottom: 3px;">Add</button></td>
+                                                </form>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="text-primary font-weight-bold m-0">Ticket Generation</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                                        <h1>Old</h1>
+                                    </div>
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><label class="switch">
+  <input type="checkbox" id="versionSlider">
+  <span class="slider round"></span>
+</label></div>
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                                        <h1>New</h1>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col d-xl-flex justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" onclick="setVersion()" type="button">Save</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="text-primary font-weight-bold m-0">Generate Old Cookies</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center">
+                                        <h1>Cookies Made: <span id="cookieCount">0</span></h1>
+                                    </div>
+                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center">
+                                        <h1>Average Creation Time: <span id="averageTimings">0</span>ms</h1>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 10px;">
+                                        <div class="btn-group" role="group"><button class="btn btn-success" type="button" id="startBTN">Start</button><button class="btn btn-danger" type="button" id="stopBTN" disabled>Stop</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © TicketAPI 2020</span></div>
+            </div>
+        </footer>
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <script>
+        function getVersion(){
+            var Http = new XMLHttpRequest();
+            var url='https://th-mas-ticketapi.herokuapp.com/api/version';
+            Http.open("GET", url);
+            Http.send();
+            Http.onreadystatechange = (e) => {
+            if(Http.readyState===4 && Http.status==200){
+                if(JSON.parse(Http.responseText)['version'].toString() == 1){
+                    document.getElementById('versionSlider').checked = true
+                } else{
+                    document.getElementById('versionSlider').checked = false
+                }
+            }
+            }
+        }
+
+        function setVersion(){
+            var Http = new XMLHttpRequest();
+            var url='https://th-mas-ticketapi.herokuapp.com/api/changeversion';
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            if(document.getElementById('versionSlider').checked){
+                    Http.send(JSON.stringify({"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666","version": 1}));
+                } else{
+                    Http.send(JSON.stringify({"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666","version": 0}));
+                }
+        }
+
+        const average = arr => arr.reduce((sume, el) => sume + el, 0) / arr.length;
+        var timings = [];
+        interval = null;
+    
+        startBTN.onclick = function () {
+            document.getElementById('startBTN').disabled = true
+            document.getElementById('stopBTN').disabled = false
+            var i = 0;
+            interval = setInterval(function () {
+                var t0 = performance.now()
+                i++
+                document.getElementById('cookieCount').textContent = parseInt(document.getElementById('cookieCount').textContent) + 1
+                genCookie(100)
+                var t1 = performance.now()
+                timings.push((t1 - t0))
+                document.getElementById('averageTimings').textContent = Math.round(average(timings));
+    
+            }, 1);
+        };
+    
+        stopBTN.onclick = function () {
+            document.getElementById('startBTN').disabled = false
+            document.getElementById('stopBTN').disabled = true
+            clearInterval(interval);
+        };
+        
+        function removeClient(discord){
+            var Http = new XMLHttpRequest();
+            var url='https://th-mas-ticketapi.herokuapp.com/api/removeclient';
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify({"owner":{"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666"},"removed":{"discord": discord}}));
+
+            Http.onreadystatechange = (e) => {
+            if(Http.readyState===4 && Http.status==200){
+                var row = document.getElementById(discord);
+                row.parentNode.removeChild(row);
+            }
+            }
+        }
+
+        function addClient(){
+            var Http = new XMLHttpRequest();
+            var url='https://th-mas-ticketapi.herokuapp.com/api/addclient';
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            var discord = document.getElementById("newDiscord").value
+            var email = document.getElementById("newEmail").value
+            if (discord.length > 0 && email.length > 0){
+                Http.send(JSON.stringify({"owner":{"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666"},"added":{"discord": discord,"email":email}}));
+
+                Http.onreadystatechange = (e) => {
+                if(Http.readyState===4 && Http.status==200){
+                    var table = document.getElementById("clientTable")
+                    i = JSON.parse(Http.responseText)['client']
+                    var row = table.insertRow(1)
+                    row.id = i['discord']
+                    var discord = row.insertCell(0);
+                    discord.innerHTML = i['discord'] + '<button class="btn btn-danger" type="button" style="height: 30px;margin-left:20px;padding-top: 3px;padding-bottom: 3px;" onclick="removeClient(\''+i['discord']+'\')">Remove</button>';
+                    var apikey = row.insertCell(1);
+                    apikey.innerHTML = i['api_key'];
+                    var email = row.insertCell(2);
+                    email.innerHTML = i['email'];
+                    var requests = row.insertCell(3);
+                    requests.innerHTML = i['requests'];
+                    document.getElementById("newEmail").value = null
+                    document.getElementById("newDiscord").value = null
+                }
+                }
+            }
+        }
+        window.onload = function(){ 
+            getVersion()
+        }
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
