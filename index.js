@@ -21,7 +21,7 @@ console.log('Connected to DB'))
 //         TTS = TTS.match(/return \([^.?]{4}=[^.?]{4}\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\[[^.?]{4}.[^.?]{4}\(+\+[^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\),document\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]=this\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\(\) \+ [^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\) \+ this\[[^.?]{4}.[^.?]{4}\([^.?]{4}.[^.?]{4} \^ [^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\) \+ [^.?]{4}.\[\+[^.?]{4}.[^.?]{4}\]\);/)[0]
 //         p1 = TTS.match(/=.+?\[.+?\]\[.+?\]\(.+?\)/)[0].slice(1)
 //         p2 = TTS.match(/\+ this\[.+?\]\(.+?\)/)[0].slice(2).replace(/\(.{4}\)/,('('+p1+')')).replace('this','h')
-//         a = 'var h = this;genCookie=function(t){var e=[];for(i=0;i<t;i++)e.push({ntbcc:'+p2+'});var a=new XMLHttpRequest;a.open("POST","https://th-mas-ticketapi.herokuapp.com/api/add",!0),a.setRequestHeader("Content-type","application/json"),a.onreadystatechange=function(){if(a.readyState == XMLHttpRequest.DONE){console.log(a.responseText)}},a.send(JSON.stringify({data:e}))};' + TTS
+//         a = 'var h = this;genCookie=function(t){var e=[];for(i=0;i<t;i++)e.push({ntbcc:'+p2+'});var a=new XMLHttpRequest;a.open("POST","https://t-ticket-api.herokuapp.com//api/add",!0),a.setRequestHeader("Content-type","application/json"),a.onreadystatechange=function(){if(a.readyState == XMLHttpRequest.DONE){console.log(a.responseText)}},a.send(JSON.stringify({data:e}))};' + TTS
 //         var newData = response.data
 //         newData = newData.replace(TTS,a)
 //         fs.writeFile('public/ticket.js', newData, function (err) {
