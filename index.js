@@ -15,24 +15,24 @@ var User = require('./models/User.js');
 mongoose.connect('mongodb+srv://thomas:lTtlhuzgeUWH76hx@cluster0.j03wb.mongodb.net/rest?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true}, () =>
 console.log('Connected to DB'))
 
-axios.get('https://www.supremenewyork.com/ticket.js')
-    .then(function (response) {
-        var TTS = response.data
-        TTS = TTS.match(/return \([^.?]{4}=[^.?]{4}\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\[[^.?]{4}.[^.?]{4}\(+\+[^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\),document\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]=this\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\(\) \+ [^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\) \+ this\[[^.?]{4}.[^.?]{4}\([^.?]{4}.[^.?]{4} \^ [^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\) \+ [^.?]{4}.\[\+[^.?]{4}.[^.?]{4}\]\);/)[0]
-        p1 = TTS.match(/=.+?\[.+?\]\[.+?\]\(.+?\)/)[0].slice(1)
-        p2 = TTS.match(/\+ this\[.+?\]\(.+?\)/)[0].slice(2).replace(/\(.{4}\)/,('('+p1+')')).replace('this','h')
-        a = 'var h = this;genCookie=function(t){var e=[];for(i=0;i<t;i++)e.push({ntbcc:'+p2+'});var a=new XMLHttpRequest;a.open("POST","https://th-mas-ticketapi.herokuapp.com/api/add",!0),a.setRequestHeader("Content-type","application/json"),a.onreadystatechange=function(){if(a.readyState == XMLHttpRequest.DONE){console.log(a.responseText)}},a.send(JSON.stringify({data:e}))};' + TTS
-        var newData = response.data
-        newData = newData.replace(TTS,a)
-        fs.writeFile('public/ticket.js', newData, function (err) {
-            if (err) throw err;
-            console.log('Ticket Ready For Cookie Creation!');
-        });
-    })
-    .catch(function (error) {
-        console.log("Error fetching ticket.js")
-        console.log(error)
-    })
+// axios.get('https://www.supremenewyork.com/ticket.js')
+//     .then(function (response) {
+//         var TTS = response.data
+//         TTS = TTS.match(/return \([^.?]{4}=[^.?]{4}\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\[[^.?]{4}.[^.?]{4}\(+\+[^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\),document\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]=this\[[^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\)\]\(\) \+ [^.?]{4}.[^.?]{4}\(\+[^.?]{4}.[^.?]{4}\) \+ this\[[^.?]{4}.[^.?]{4}\([^.?]{4}.[^.?]{4} \^ [^.?]{4}.[^.?]{4}\)\]\([^.?]{4}\) \+ [^.?]{4}.\[\+[^.?]{4}.[^.?]{4}\]\);/)[0]
+//         p1 = TTS.match(/=.+?\[.+?\]\[.+?\]\(.+?\)/)[0].slice(1)
+//         p2 = TTS.match(/\+ this\[.+?\]\(.+?\)/)[0].slice(2).replace(/\(.{4}\)/,('('+p1+')')).replace('this','h')
+//         a = 'var h = this;genCookie=function(t){var e=[];for(i=0;i<t;i++)e.push({ntbcc:'+p2+'});var a=new XMLHttpRequest;a.open("POST","https://th-mas-ticketapi.herokuapp.com/api/add",!0),a.setRequestHeader("Content-type","application/json"),a.onreadystatechange=function(){if(a.readyState == XMLHttpRequest.DONE){console.log(a.responseText)}},a.send(JSON.stringify({data:e}))};' + TTS
+//         var newData = response.data
+//         newData = newData.replace(TTS,a)
+//         fs.writeFile('public/ticket.js', newData, function (err) {
+//             if (err) throw err;
+//             console.log('Ticket Ready For Cookie Creation!');
+//         });
+//     })
+//     .catch(function (error) {
+//         console.log("Error fetching ticket.js")
+//         console.log(error)
+//     })
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
