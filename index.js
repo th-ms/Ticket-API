@@ -103,6 +103,10 @@ app.get('/dashboard', (req, res) => {
     }
 });
 
+app.get('/test', (req, res) => {
+    res.sendFile(path.join(__dirname+'/static' + '/index.html'));
+});
+
 app.route('/login')
 .get(sessionChecker, (req, res) => {
     res.sendFile(path.join(__dirname+'/static' + '/login.html'));

@@ -159,19 +159,33 @@
                             </div>
                             <div class="card-body">
                                 <div class="row" style="margin: 0px;">
-                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
-                                        <h1>Old</h1>
+                                    <div class="col d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center">
+                                        <h1 style="font-size: 4vw;">Old</h1>
                                     </div>
-                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><label class="switch">
-  <input type="checkbox" id="versionSlider">
-  <span class="slider round"></span>
-</label></div>
-                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
-                                        <h1>New</h1>
+                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><label class="switch"><input type="checkbox" id="versionSlider"/><span class="slider round"></span></label></div>
+                                    <div class="col d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center">
+                                        <h1 style="font-size: 4vw;">New</h1>
                                     </div>
                                 </div>
                                 <div class="row" style="margin: 0px;">
-                                    <div class="col d-xl-flex justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" onclick="setVersion()" type="button">Save</button></div>
+                                    <div class="col d-flex d-xl-flex justify-content-end justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" onclick="setVersion()" type="button">Save</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="text-primary font-weight-bold m-0">Manual Settings</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col text-center"><input type="text" placeholder="vvv" />
+                                        <div class="form-check"><input type="checkbox" class="form-check-input" id="formCheck-1" /><label class="form-check-label" for="formCheck-1">Use manual vvv</label></div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 0px;">
+                                    <div class="col d-flex d-xl-flex justify-content-end justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" type="button">Save</button></div>
                                 </div>
                             </div>
                         </div>
@@ -186,15 +200,15 @@
                             <div class="card-body">
                                 <div class="row" style="margin: 0px;">
                                     <div class="col d-xl-flex justify-content-xl-start align-items-xl-center">
-                                        <h1>Cookies Made: <span id="cookieCount">0</span></h1>
+                                        <h1 style="font-size: 5vw;">Cookies Made:  <span id="cookieCount">0</span></h1>
                                     </div>
                                     <div class="col d-xl-flex justify-content-xl-start align-items-xl-center">
-                                        <h1>Average Creation Time: <span id="averageTimings">0</span>ms</h1>
+                                        <h1 style="font-size: 5vw;">Average Creation Time: <span id="averageTimings">0</span>ms</h1>
                                     </div>
                                 </div>
                                 <div class="row" style="margin: 0px;">
-                                    <div class="col d-xl-flex justify-content-xl-center align-items-xl-center" style="padding-top: 10px;">
-                                        <div class="btn-group" role="group"><button class="btn btn-success" type="button" id="startBTN">Start</button><button class="btn btn-danger" type="button" id="stopBTN" disabled>Stop</button></div>
+                                    <div class="col d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="padding-top: 10px;">
+                                        <div role="group" class="btn-group"><button class="btn btn-success" id="startBTN" type="button">Start</button><button class="btn btn-danger" id="stopBTN"  type="button" disabled>Stop</button></div>
                                     </div>
                                 </div>
                             </div>
