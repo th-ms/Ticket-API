@@ -7,6 +7,7 @@ const genCookie = require('../public/customTicket.js')
 const crypto = require("crypto");
 
 var apiVersion = 1
+var vvv = "1597914320"
 
 router.use(bodyParser.json());
 
@@ -39,6 +40,7 @@ router.post('/addclient', async (req, res) => {
         }
     }); 
 });
+
 
 router.post('/removeclient', async (req, res) => {
     Client.countDocuments({api_key: req.body.owner.api_key}, function (err, count){ 
@@ -93,6 +95,25 @@ router.get('/version', async (req, res) => {
     res.json({"version":apiVersion})
 });
 
+router.get('/vvv', async (req, res) => {
+    res.json({"vvv":vvv})
+});
+
+router.post('/changevvv', async (req, res) => {
+    Client.countDocuments({api_key: req.body.api_key}, function (err, count){ 
+        if(count>0){
+            try{
+                apiVersion = req.body.vvv;
+                res.json({message:'vvv updated.'})
+            }catch(err){
+                res.json({error:'Error changing vvv.'})
+            }
+        } else {
+            res.json({message:'Invalid API Key.'})
+        }
+    }); 
+});
+
 router.get('/clients', async (req, res) => {
     try{
         Client.find({}, function (err, clients){ 
@@ -119,11 +140,12 @@ router.post('/fetch', async function(req,res) {
     Client.countDocuments({api_key: req.body.api_key}, function (err, count){ 
         if(count>0){
             if (apiVersion.toString() == '1'){
-                res.json(genCookie(1))
+                ntbcc = genCookie()['ntbcc']
+                res.json({"ntbcc":ntbcc,"vvv":vvv})
             } else {
                 try{
                     Cookie.findOneAndDelete({}, function(err, cookie){
-                        res.json({ntbcc:cookie.ntbcc})
+                        res.json({"ntbcc":cookie.ntbcc,"vvv":vvv})
                     })
                     
                 }catch(err){

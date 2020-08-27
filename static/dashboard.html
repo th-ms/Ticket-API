@@ -183,12 +183,12 @@
                             </div>
                             <div class="card-body">
                                 <div class="row" style="margin: 0px;">
-                                    <div class="col text-center"><input type="text" placeholder="vvv" />
-                                        <div class="form-check"><input type="checkbox" class="form-check-input" id="formCheck-2" /><label class="form-check-label" for="formCheck-1">Use manual vvv</label></div>
+                                    <div class="col text-center"><input type="text" id="vvv" placeholder="vvv" />
+                                        <!-- <div class="form-check"><input type="checkbox" class="form-check-input" id="formCheck-2" /><label class="form-check-label" for="formCheck-1">Use manual vvv</label></div> -->
                                     </div>
                                 </div>
                                 <div class="row" style="margin: 0px;">
-                                    <div class="col d-flex d-xl-flex justify-content-end justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" type="button">Save</button></div>
+                                    <div class="col d-flex d-xl-flex justify-content-end justify-content-xl-end align-items-xl-center"><button class="btn btn-primary" onclick="updateVVV()" type="button">Save</button></div>
                                 </div>
                             </div>
                         </div>
@@ -253,6 +253,14 @@
                 } else{
                     Http.send(JSON.stringify({"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666","version": 0}));
                 }
+        }
+
+        function updateVVV(){
+            var Http = new XMLHttpRequest();
+            var url='https://t-ticket-api.herokuapp.com/api/changevvv';
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify({"api_key":"1df05d6ee1647f1357b29aa3101f926fed435666","vvv": document.getElementById("vvv").value}));
         }
 
         function clearCookies(){

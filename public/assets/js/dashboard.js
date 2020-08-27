@@ -39,5 +39,18 @@ function loadClients(){
     }
 }
 
+function loadVVV(){
+    var Http = new XMLHttpRequest();
+    var url='https://t-ticket-api.herokuapp.com/api/vvv';
+    Http.open("GET", url);
+    Http.send();
+    
+    Http.onreadystatechange = (e) => {
+    if(Http.readyState===4 && Http.status==200){
+        document.getElementById('vvv').value = JSON.parse(Http.responseText)['vvv'];
+    }
+    }
+}
+
 getCookieCount()
 loadClients()

@@ -2137,11 +2137,6 @@ key[5] = 37
 key[6] = 104
 key[7] = 51
 
-module.exports = function(t) {
-    var e = [];
-    for (i = 0; i < t; i++) e.push({
-        ntbcc: h(abc(key)),
-        vvv: 1597914320
-    });
-    return e
+module.exports = function() {
+    return {ntbcc: h(abc(key))}
 }
