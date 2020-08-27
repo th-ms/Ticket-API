@@ -54,3 +54,4 @@ function loadVVV(){
 
 getCookieCount()
 loadClients()
+loadVVV()
