@@ -73,6 +73,22 @@ router.post('/changeversion', async (req, res) => {
     }); 
 });
 
+router.post('/clearcookies', async (req, res) => {
+    Client.countDocuments({api_key: req.body.api_key}, function (err, count){ 
+        if(count>0){
+            try{
+                Cookie.remove({}, function(err, cookie){
+                    res.json({message:"Successfully cleared cookies."})
+                })
+            }catch(err){
+                res.json({error:'Error clearing cookies.'})
+            }
+        } else {
+            res.json({message:'Invalid API Key.'})
+        }
+    }); 
+});
+
 router.get('/version', async (req, res) => {
     res.json({"version":apiVersion})
 });
