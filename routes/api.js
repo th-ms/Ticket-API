@@ -103,7 +103,7 @@ router.post('/changevvv', async (req, res) => {
     Client.countDocuments({api_key: req.body.api_key}, function (err, count){ 
         if(count>0){
             try{
-                apiVersion = req.body.vvv;
+                vvv = req.body.vvv;
                 res.json({message:'vvv updated.'})
             }catch(err){
                 res.json({error:'Error changing vvv.'})
