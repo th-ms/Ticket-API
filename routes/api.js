@@ -146,6 +146,7 @@ router.post('/fetch', async function(req,res) {
                 try{
                     Cookie.findOneAndDelete({}, function(err, cookie){
                         if (cookie){
+                            console.log(cookie)
                             res.json({"ntbcc":cookie.ntbcc,"vvv":cookie.vvv})
                         } else {
                             res.json({'error':'No cookies available'})
