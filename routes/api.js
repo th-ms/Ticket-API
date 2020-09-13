@@ -111,7 +111,7 @@ router.post('/changevvv', async (req, res) => {
         } else {
             res.json({message:'Invalid API Key.'})
         }
-    }); 
+    });
 });
 
 router.get('/clients', async (req, res) => {
@@ -145,7 +145,12 @@ router.post('/fetch', async function(req,res) {
             } else {
                 try{
                     Cookie.findOneAndDelete({}, function(err, cookie){
-                        res.json({"ntbcc":cookie.ntbcc,"vvv":vvv})
+                        if (cookie){
+                            res.json({"ntbcc":cookie.ntbcc,"vvv":cookie.vvv})
+                        } else {
+                            res.json({'error':'No cookies available'})
+                        }
+                        
                     })
                     
                 }catch(err){

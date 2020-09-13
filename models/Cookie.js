@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const CookieSchema = mongoose.Schema({
-    ntbcc: String
+    ntbcc: String,
+    vvv: String
 })
 
 module.exports = mongoose.model('Cookies', CookieSchema)
