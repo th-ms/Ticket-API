@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var User = require('./models/User.js');
 
-mongoose.connect('mongodb+srv://thomas:lTtlhuzgeUWH76hx@cluster0.j03wb.mongodb.net/rest?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true}, () =>
+mongoose.connect('mongodb+srv',{useNewUrlParser:true,useUnifiedTopology:true}, () =>
 console.log('Connected to DB'))
 
 // axios.get('https://www.supremenewyork.com/ticket.js')
