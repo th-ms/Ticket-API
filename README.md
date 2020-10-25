@@ -32,7 +32,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-An online trading card game based around pictures of my friend.
+An express based API that serves valid Ticket/vvv tokens
 
 ### Built With
 * [Node](https://nodejs.org/)
