@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-
+  <img src="https://cdn.onlinewebfonts.com/svg/img_432058.png">
   <h3 align="center">Ticket API</h3>
 
   <p align="center">
@@ -32,6 +32,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<img src="https://media.discordapp.net/attachments/562041975797317643/770112564281212928/unknown.png?width=741&height=676">
 An express based API that serves valid Ticket/vvv tokens
 
 ### Built With
