@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="https://cdn.onlinewebfonts.com/svg/img_432058.png">
+  <img src="https://cdn.onlinewebfonts.com/svg/img_432058.png" style="width=256px;height:256px;">
   <h3 align="center">Ticket API</h3>
 
   <p align="center">
